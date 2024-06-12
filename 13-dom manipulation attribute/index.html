@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM attribute</title>
+    <style>
+        .blue-box {
+            height: 300px;
+            width: 300px;
+            border: 5px solid blue;
+            background-color: aquamarine;
+        }
+        .yellow-box {
+            height: 300px;
+            width: 300px;
+            border: 5px solid rgb(255, 242, 0);
+            background-color: rgb(200, 232, 56);
+        }
+    </style>
+</head>
+<body>
+    <input type ="checkbox" value="nasi ayam">Nasi ayam<br>
+    <input type ="checkbox" value="mee goreng">Mee goreng<br>
+    <input type ="checkbox" value="nasi lemak">Nasi lemak<br>
+    <input type ="checkbox" value="roti canai">Roti canai<br>
+    <button onClick="dapatkanPesanan()">Dapatkan pesanan</button>
+    <div id="pesanan"></div>
+    <script>
+        function dapatkanPesanan() {
+            let senarai_pesanan = document.querySelectorAll('input[type=checkbox]:checked');
+            //console.log(senarai_pesanan);
+            let pesanan_baru = [];
+            senarai_pesanan.forEach(function(item){
+                //console.log(item.value)
+                pesanan_baru.push(item.value)
+            })
+            //console.log(pesanan_baru)
+            document.getElementById('pesanan').innerText = pesanan_baru.join(', ')
+        }
+    </script>
+</body>
+</html>

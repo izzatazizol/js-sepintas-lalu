@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <style>
+        .blue-box {
+            height: 300px;
+            width: 300px;
+            border: 5px solid blue;
+            background-color: aquamarine;
+        }
+        .yellow-box {
+            height: 300px;
+            width: 300px;
+            border: 5px solid rgb(255, 242, 0);
+            background-color: rgb(200, 232, 56);
+        }
+    </style>
+</head>
+<body>
+    <div id="box" class="yellow-box"></div>
+    <button onClick="updateStyles()">Click me</button>
+    <script>
+        function updateStyles() {
+            let element = document.querySelector('#box')
+            if (element.classList.contains('blue-box')) {
+                element.classList.remove('blue-box')
+                element.classList.add('yellow-box')
+            } else {
+                element.classList.remove('yellow-box')
+                element.classList.add('blue-box')
+            }
+        }
+    </script>
+</body>
+</html>
